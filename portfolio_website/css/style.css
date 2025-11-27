@@ -258,18 +258,11 @@ a {
 }
 
 /* ========== PROJECT PAGE ========== */
-.project-main {
-  padding: 4rem 0;
-  min-height: calc(100vh - 200px);
-}
-
-/* Verberg alle sections standaard */
-.project-main section {
+section {
   display: none;
 }
 
-/* Toon alleen de section die in URL staat (bijv. #project1) */
-.project-main section:target {
+section:target {
   display: block;
 }
 

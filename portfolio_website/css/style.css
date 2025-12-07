@@ -85,22 +85,6 @@ a {
   margin-bottom: 1.5rem;
 }
 
-/* Profiel Foto in Cirkel */
-.photo-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.profile-photo {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 4px 15px rgba(0, 51, 102, 0.3);
-  border: 4px solid var(--donkerblauw);
-}
-
 /* Responsive Design */
 @media (max-width: 991px) {
   .intro-text h1 {
@@ -109,12 +93,6 @@ a {
 
   .intro-text p {
     font-size: 1rem;
-  }
-
-  .profile-photo {
-    width: 250px;
-    height: 250px;
-    margin-top: 2rem;
   }
 
   .main-section {
@@ -130,11 +108,6 @@ a {
 
   .intro-text p {
     font-size: 0.95rem;
-  }
-
-  .profile-photo {
-    width: 200px;
-    height: 200px;
   }
 }
 
@@ -258,11 +231,18 @@ a {
 }
 
 /* ========== PROJECT PAGE ========== */
-section {
+.project-main {
+  padding: 4rem 0;
+  min-height: calc(100vh - 200px);
+}
+
+/* Verberg alle sections standaard */
+.project-main section {
   display: none;
 }
 
-section:target {
+/* Toon alleen de section die in URL staat (bijv. #project1) */
+.project-main section:target {
   display: block;
 }
 

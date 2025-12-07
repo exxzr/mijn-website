@@ -30,7 +30,7 @@
 
         <!-- Navigation Links -->
         <div class="navbar-nav ms-auto">
-          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link active fw-bold text-decoration-underline" aria-current="page" href="index.html">Home</a>
           <a class="nav-link" href="portfolio.html">Projecten</a>
           <a class="nav-link" href="contact.html">Contact</a>
         </div>
@@ -41,9 +41,9 @@
   <!-- Main Section -->
   <main class="main-section">
     <div class="container">
-      <div class="row align-items-center">
-        <!-- Introductie Tekst (Links) -->
-        <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
+      <div class="row g-5">
+        <!-- Links: Introductie Tekst (col-lg-6) -->
+        <div class="col-lg-6">
           <div class="intro-text">
             <h1>Netwerkbeheerder</h1>
             <p>Ik ben Eren Ozer, student Systeem- en Netwerkbeheer met een passie voor het efficiënt beheren en optimaliseren van netwerken. Tijdens mijn studie ontwikkel ik sterke technische vaardigheden en een analytische aanpak om systemen betrouwbaar en veilig te houden.</p>
@@ -51,12 +51,27 @@
           </div>
         </div>
 
-        <!-- Foto (Rechts) -->
-        <div class="col-lg-6 col-md-12">
-          <div class="photo-container">
-            <img src="./assets/images/foto.png" alt="Profiel foto" class="profile-photo">
-          </div>
+        <!-- Midden: Foto (col-lg-3) -->
+        <div class="col-lg-3 d-flex align-items-center justify-content-center">
+          <figure>
+            <img src="./assets/images/foto.png" alt="Profiel foto" class="img-fluid rounded-circle" style="max-width: 200px;">
+            <figcaption class="text-center small mt-2">© Eren Ozer</figcaption>
+          </figure>
         </div>
+
+        <!-- Rechts: Aside met Contact (col-lg-3) -->
+        <aside class="col-lg-3 border-start ps-4">
+          <h2 class="text-uppercase fs-5 fw-bolder pt-3" style="color: #003366;">Contact</h2>
+          <p style="color: #000000;">
+            Eren Ozer<br>
+            <a href="mailto:eren.ozer@student.ap.be" style="color: #003366; text-decoration: none;">eren.ozer@student.ap.be</a><br>
+            +32 467 054 331<br>
+            <br>
+            Ellermanstraat 51<br>
+            2000 Antwerpen<br>
+            België
+          </p>
+        </aside>
       </div>
     </div>
   </main>
@@ -71,7 +86,10 @@
         <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
           <a href="project.html#project1" class="project-card-link">
             <div class="project-card">
-              <img src="./assets/images/webwiz.png" alt="Webwiz Project" class="project-image">
+              <figure class="mb-0">
+                <img src="./assets/images/webwiz.png" alt="Webwiz Project" class="project-image">
+                <figcaption class="small text-center">© Eren Ozer</figcaption>
+              </figure>
               <h3 class="project-title">Gestructureerde Bekabeling</h3>
               <p class="project-description">Het structureerd bekabelen van een netwerk.</p>
             </div>
@@ -82,7 +100,10 @@
         <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
           <a href="project.html#project2" class="project-card-link">
             <div class="project-card">
-              <img src="./assets/images/project2.jpg" alt="Project 2" class="project-image">
+              <figure class="mb-0">
+                <img src="./assets/images/project2.jpg" alt="Project 2" class="project-image">
+                <figcaption class="small text-center">© Eren Ozer</figcaption>
+              </figure>
               <h3 class="project-title">Project 2</h3>
               <p class="project-description">Momenteel leeg</p>
             </div>
@@ -93,7 +114,10 @@
         <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
           <a href="project.html#project3" class="project-card-link">
             <div class="project-card">
-              <img src="./assets/images/project3.jpg" alt="Project 3" class="project-image">
+              <figure class="mb-0">
+                <img src="./assets/images/project3.jpg" alt="Project 3" class="project-image">
+                <figcaption class="small text-center">© Eren Ozer</figcaption>
+              </figure>
               <h3 class="project-title">Project 3</h3>
               <p class="project-description">Momenteel leeg</p>
             </div>
@@ -104,12 +128,3 @@
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p class="footer-text">&copy; Eren Ozer</p>
-    </div>
-  </footer>
-
-</body>
-
-</html>

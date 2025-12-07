@@ -16,6 +16,17 @@
     </script>
   <!-- eigen geschreven css voor jouw html-bestand -->
   <link rel="stylesheet" href="./css/style.css">
+
+  <!-- LEAFLET -->
+  <!-- voeg het leaflet css-bestand toe om de kaart van standaard opmaak te voorzien -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <!-- voeg de leaflet.js javascript toe aan de pagina en check de integriteit ervan -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- Map script -->
+  <script src="js/map.js" defer></script>
 </head>
 
 <body>
@@ -32,7 +43,7 @@
         <div class="navbar-nav ms-auto">
           <a class="nav-link" href="index.html">Home</a>
           <a class="nav-link" href="portfolio.html">Projecten</a>
-          <a class="nav-link" href="contact.html">Contact</a>
+          <a class="nav-link active fw-bold text-decoration-underline" aria-current="page" href="contact.html">Contact</a>
         </div>
       </div>
     </nav>
@@ -45,34 +56,39 @@
       <h1 class="text-center mb-5" style="color: #003366;">Neem Contact Met Mij Op</h1>
 
       <div class="row g-5">
-        <!-- Stuur Mij Een Bericht (Links) -->
-        <div class="col-lg-6 col-md-12">
-          <div class="bg-light p-4 rounded-3">
+        <!-- Stuur Mij Een Bericht (Links - col-lg-9) -->
+        <div class="col-lg-9">
+          <div class="p-4 rounded-3">
             <h2 class="mb-4" style="color: #003366;">Stuur Mij Een Bericht</h2>
             
-            <form>
+            <form name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true">
               <!-- Naam -->
               <div class="mb-4">
                 <label for="naam" class="form-label" style="color: #003366;">Naam</label>
-                <input type="text" class="form-control" id="naam" placeholder="Jouw naam">
+                <input type="text" class="form-control" id="naam" name="naam" placeholder="Jouw naam" required>
               </div>
 
               <!-- Email -->
               <div class="mb-4">
                 <label for="email" class="form-label" style="color: #003366;">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Jouw email">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Jouw email" required>
               </div>
 
               <!-- Onderwerp -->
               <div class="mb-4">
                 <label for="onderwerp" class="form-label" style="color: #003366;">Onderwerp</label>
-                <input type="text" class="form-control" id="onderwerp" placeholder="Onderwerp van je bericht">
+                <input type="text" class="form-control" id="onderwerp" name="onderwerp" placeholder="Onderwerp van je bericht" required>
               </div>
 
               <!-- Bericht -->
               <div class="mb-4">
                 <label for="bericht" class="form-label" style="color: #003366;">Bericht</label>
-                <textarea class="form-control" id="bericht" rows="5" placeholder="Schrijf je bericht hier..."></textarea>
+                <textarea class="form-control" id="bericht" name="bericht" rows="5" placeholder="Schrijf je bericht hier..." required></textarea>
+              </div>
+
+              <!-- reCAPTCHA -->
+              <div class="mb-4">
+                <div data-netlify-recaptcha="true"></div>
               </div>
 
               <!-- Versturen Button -->
@@ -81,29 +97,22 @@
           </div>
         </div>
 
-        <!-- Contact Informatie (Rechts) -->
-        <div class="col-lg-6 col-md-12">
-          <div class="bg-light p-4 rounded-3">
-            <h2 class="mb-4" style="color: #003366;">Contact Informatie</h2>
-            
-            <div class="mb-4 pb-4 border-bottom">
-              <h5 class="mb-2" style="color: #003366;">Email</h5>
-              <p class="mb-0"><a href="mailto:jouw@email.com" class="text-decoration-none">eren.ozer@student.ap.be</a></p>
-            </div>
+        <!-- Rechts: Aside met Contact (col-lg-3) -->
+        <aside class="col-lg-3 border-start ps-4">
+          <h2 class="text-uppercase fs-5 fw-bolder pt-3" style="color: #003366;">Contact</h2>
+          <p style="color: #000000;">
+            Eren Ozer<br>
+            <a href="mailto:eren.ozer@student.ap.be" style="color: #003366; text-decoration: none;">eren.ozer@student.ap.be</a><br>
+            +32 467 054 331<br>
+            <br>
+            Ellermanstraat 51<br>
+            2000 Antwerpen<br>
+            België
+          </p>
 
-            <div class="mb-4 pb-4 border-bottom">
-              <h5 class="mb-2" style="color: #003366;">Telefoon</h5>
-              <p class="mb-0"><a href="tel:+32123456789" class="text-decoration-none">+32 467 054 331</a></p>
-            </div>
-
-            <div>
-              <h5 class="mb-2" style="color: #003366;">Adres</h5>
-              <p class="mb-0">Ellermanstraat 51<br>
-              2000 Antwerpen<br>
-              België</p>
-            </div>
-          </div>
-        </div>
+          <!-- Map -->
+          <div id="apMap" style="height: 300px; margin-top: 20px; border-radius: 8px;"></div>
+        </aside>
       </div>
     </div>
   </main>

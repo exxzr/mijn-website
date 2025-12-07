@@ -34,12 +34,11 @@
   <header class="header">
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container-fluid">
-        <!-- Logo -->
         <a class="navbar-brand" href="index.html">
           <img src="assets/images/logoo.png" alt="Logo" class="logo">
         </a>
 
-        <!-- Navigation Links -->
+        <!-- Navigation  -->
         <div class="navbar-nav ms-auto">
           <a class="nav-link" href="index.html">Home</a>
           <a class="nav-link" href="portfolio.html">Projecten</a>
@@ -56,48 +55,40 @@
       <h1 class="text-center mb-5" style="color: #003366;">Neem Contact Met Mij Op</h1>
 
       <div class="row g-5">
-        <!-- Stuur Mij Een Bericht (Links - col-lg-9) -->
         <div class="col-lg-9">
           <div class="p-4 rounded-3">
             <h2 class="mb-4" style="color: #003366;">Stuur Mij Een Bericht</h2>
             
             <form name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true">
-              <!-- Naam -->
               <div class="mb-4">
                 <label for="naam" class="form-label" style="color: #003366;">Naam*</label>
                 <input type="text" class="form-control" id="naam" name="naam" placeholder="Jouw naam" required>
               </div>
 
-              <!-- Email -->
               <div class="mb-4">
                 <label for="email" class="form-label" style="color: #003366;">Email*</label>
                 <input type="email" class="form-control" id="email" name="email" placeholder="Jouw email" required>
               </div>
 
-              <!-- Onderwerp -->
               <div class="mb-4">
                 <label for="onderwerp" class="form-label" style="color: #003366;">Onderwerp*</label>
                 <input type="text" class="form-control" id="onderwerp" name="onderwerp" placeholder="Onderwerp van je bericht" required>
               </div>
 
-              <!-- Bericht -->
               <div class="mb-4">
                 <label for="bericht" class="form-label" style="color: #003366;">Bericht*</label>
                 <textarea class="form-control" id="bericht" name="bericht" rows="5" placeholder="Schrijf je bericht hier..." required></textarea>
               </div>
 
-              <!-- reCAPTCHA -->
               <div class="mb-4">
                 <div data-netlify-recaptcha="true"></div>
               </div>
 
-              <!-- Versturen Button -->
               <button type="submit" class="btn text-light" style="background-color: #003366;">Versturen</button>
             </form>
           </div>
         </div>
 
-        <!-- Rechts: Aside met Contact (col-lg-3) -->
         <aside class="col-lg-3 border-start ps-4">
           <h2 class="text-uppercase fs-5 fw-bolder pt-3" style="color: #003366;">Contact</h2>
           <p style="color: #000000;">
